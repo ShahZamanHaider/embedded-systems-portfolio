@@ -1,17 +1,9 @@
 # Smart Water Bottle Reminder
 
 ## Overview
+NOTE: For more details check Project_Report.pdf
+
 The Smart Water Bottle Reminder project aims to encourage users to stay hydrated throughout the day, especially during long working hours. By attaching a device to a water bottle, it periodically reminds the user to drink water at regular intervals.
-
-## Pin Configuration
-Ensure the components are connected to the correct pins on the Arduino Nano:
-
-- **Tilt Sensor:** Connected to pin 2
-- **Green LED:** Connected to pin 3
-- **Yellow LED:** Connected to pin 4
-- **Vibration Motor:** Connected to pin 5
-- **Red LED:** Connected to pin 6
-- **Piezo Buzzer:** Connected to pin 7
 
 Verify and adjust pin configurations in the Arduino code (`const int` declarations) if necessary.
 
@@ -48,5 +40,3 @@ Verify and adjust pin configurations in the Arduino code (`const int` declaratio
 ## Contributors
 - Shah Zaman Haider - Project Developer
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
