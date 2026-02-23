@@ -71,3 +71,61 @@ The Arduino continuously reads two digital sensors:
 When triggered, the system sends SMS messages to three predefined phone numbers using AT commands through the SIM900A module.
 
 Example messages:
+
+TANK IS EMPTY
+TANK IS FULL
+
+
+---
+
+### 3. Phone Call Alerts
+After sending SMS messages, the system places sequential calls to all stored numbers for urgent notification.
+
+---
+
+### 4. Reset / Hangup
+Pressing the reset button sends an `ATH` command to the GSM module to hang up ongoing calls.
+
+---
+
+## 🧠 Code Structure
+
+### Phone Number Storage
+Two structures store contact numbers:
+
+- `smss` → numbers for SMS alerts
+- `calll` → numbers for call alerts
+
+---
+
+### Main Functions
+
+| Function | Purpose |
+|---------|---------|
+| `SendMessage_Tank_Empty()` | Sends empty tank SMS |
+| `SendMessage_Tank_Full()` | Sends full tank SMS |
+| `sendSMS()` | GSM SMS transmission |
+| `Make_Call()` | Calls all numbers |
+| `callPhoneNumber()` | Dials a single number |
+| `hangup_Call()` | Ends active call |
+
+---
+
+## 📡 GSM Communication
+
+The system communicates with SIM900A using AT commands:
+
+- `AT+CMGF=1` → Text mode SMS
+- `AT+CMGS` → Send message
+- `ATD` → Dial call
+- `ATH` → Hang up call
+
+---
+
+## ▶️ Usage Instructions
+
+1. Insert an active SIM card into SIM900A.
+2. Update phone numbers in the code:
+
+```cpp
++91XXXXXXXXXX
